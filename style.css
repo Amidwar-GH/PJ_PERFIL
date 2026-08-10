@@ -718,11 +718,12 @@ nav a:hover {
     .modal-overlay {
         padding: 4.5rem 0.65rem 0.65rem;
         align-items: flex-start;
+        justify-content: center;
         overflow-y: auto;
     }
 
     .modal-content {
-        width: 100%;
+        width: calc(100% - 1.3rem);
         max-width: 100%;
         max-height: calc(100dvh - 5rem);
         margin: 0 auto;
