@@ -7,8 +7,8 @@
 :root {
     --bg-dark: #07070a; /* Negro profundo */
     --bg-card: rgba(22, 22, 34, 0.7); /* Tarjetas con ligera transparencia */
-    --primary: #7c3aed;
-    --primary-light: #a78bfa;
+    --primary: #5f1dd1;
+    --primary-light: #ffffff;
     --text-main: #f5f5f5;
     --text-muted: #a1a1aa;
     --border: rgba(255, 255, 255, 0.08); /* Bordes sutiles y elegantes */
@@ -16,13 +16,14 @@
 }
 
 body {
-    /* Fondo base morado muy oscuro */
-    background-color: #0a0612;
+    /* Fondo base morado casi negro */
+    background-color: #06020c;
     
-    /* Degradado sutil integrado en el fondo base */
+    /* Destellos morados más claros y visibles */
     background-image: 
-        radial-gradient(circle at 20% 20%, rgba(120, 40, 200, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(60, 20, 110, 0.2) 0%, transparent 50%);
+        radial-gradient(circle at 15% 20%, rgba(157, 78, 221, 0.35) 0%, transparent 25%),
+        radial-gradient(circle at 85% 80%, rgba(123, 44, 191, 0.30) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(90, 24, 154, 0.20) 0%, transparent 25%);
     background-attachment: fixed;
     color: #f0f0f0;
     margin: 0;
@@ -40,7 +41,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 8%;
+    padding: 1.2rem 5%;
+    box-sizing: border-box; /* Evita que el padding empuje elementos fuera de la pantalla */
     background: rgba(10, 10, 15, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
@@ -860,3 +862,10 @@ body:has(.glow-github:hover)::before {
     background: radial-gradient(circle at center, rgba(168, 85, 247, 0.2) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 80%);
 }
 
+/* Ajuste de imágenes dentro del contenedor del ícono */
+.contact-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    display: block;
+}
