@@ -112,6 +112,49 @@ nav a:hover {
     max-width: 650px;
 }
 
+.hero-role {
+    font-size: 1.1rem;
+    color: var(--primary-light);
+    font-weight: 700;
+    margin: 0.25rem 0 0.5rem;
+}
+
+.hero-more {
+    margin: 1rem 0 0.6rem;
+}
+
+
+.hero-more summary {
+    list-style: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-light);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hero-more summary::-webkit-details-marker { display: none; }
+.hero-more summary::marker { display: none; }
+
+.hero-more svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.22s ease;
+}
+
+.hero-more[open] .hero-more-toggle svg {
+    transform: rotate(180deg);
+}
+
+.hero-more p {
+    margin: 0.5rem 0 0;
+}
+
 .badge {
     display: inline-block;
     background: rgba(124, 58, 237, 0.15);
