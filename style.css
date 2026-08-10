@@ -716,7 +716,7 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .modal-overlay {
-        padding: 1rem 0.65rem;
+        padding: 0 0.65rem;
         align-items: center;
         justify-content: center;
         overflow-y: auto;
@@ -726,7 +726,7 @@ nav a:hover {
         width: calc(100% - 1.3rem);
         max-width: 100%;
         max-height: min(80dvh, 32rem);
-        margin: 0 auto;
+        margin: 1rem auto;
         border-radius: 12px;
     }
 
