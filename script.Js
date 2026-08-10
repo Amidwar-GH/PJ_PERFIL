@@ -30,6 +30,8 @@ if (readMoreBtn && moreAboutText) {
 
 
 // LÓGICA DEL MODAL DE PROYECTOS
+// LÓGICA DEL MODAL DE PROYECTOS
+// LÓGICA DEL MODAL DE PROYECTOS
 const projectCards = document.querySelectorAll('.project-card');
 const modalOverlay = document.getElementById('project-modal');
 const modalCloseBtn = document.getElementById('modal-close');
@@ -37,21 +39,27 @@ const modalImg = document.getElementById('modal-img');
 const modalTitle = document.getElementById('modal-title');
 const modalDesc = document.getElementById('modal-desc');
 const modalTags = document.getElementById('modal-tags');
+const modalGithub = document.getElementById('modal-github');
 
 if (projectCards.length > 0 && modalOverlay) {
-    // Abrir modal con la información de la tarjeta presionada
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             const title = card.getAttribute('data-title');
             const desc = card.getAttribute('data-desc');
             const img = card.getAttribute('data-img');
             const tags = card.getAttribute('data-tags').split(',');
+            const githubUrl = card.getAttribute('data-github');
 
             modalImg.src = img;
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
 
-            // Cargar etiquetas en el modal
+            // Enlaza el repositorio de GitHub correspondiente
+            if (modalGithub) {
+                modalGithub.href = githubUrl || '#';
+            }
+
+            // Cargar etiquetas
             modalTags.innerHTML = '';
             tags.forEach(tag => {
                 const span = document.createElement('span');
@@ -60,29 +68,22 @@ if (projectCards.length > 0 && modalOverlay) {
             });
 
             modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+            document.body.style.overflow = 'hidden';
         });
     });
 
-    // Función para cerrar modal
     const closeModal = () => {
         modalOverlay.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restablece el scroll
+        document.body.style.overflow = 'auto';
     };
 
     modalCloseBtn.addEventListener('click', closeModal);
 
-    // Cerrar si hace clic fuera de la ventana
     modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) {
-            closeModal();
-        }
+        if (e.target === modalOverlay) closeModal();
     });
 
-    // Cerrar con la tecla Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-            closeModal();
-        }
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
     });
 }

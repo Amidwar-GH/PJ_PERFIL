@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amidwar - Portafolio</title>
+
+    <!-- Ícono de la pestaña (Favicon) -->
+    <link rel="icon" type="image/png" href="assets/img/Profile.jpeg">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amidwar | Portafolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -235,66 +243,100 @@
 
 
         <!-- BLOQUE 4: PROYECTOS -->
+        <!-- SECCIÓN PROYECTOS -->
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="section">
             <span class="section-label">PORTAFOLIO</span>
             <h2>Proyectos Realizados</h2>
 
             <div class="projects-grid">
-
-                <!-- Proyecto 1: IoT (Aura Cyan/Cian) -->
-                <div class="project-card glow-iot" data-title="Sistema de Monitoreo IoT ESP32"
-                    data-desc="Sistema automatizado para la lectura y procesamiento de variables ambientales en tiempo real utilizando microcontroladores ESP32."
-                    data-img="assets/img/IoT.png" data-tags="IoT, ESP32, C++">
+                <!-- Proyecto 1: IoT -->
+                <div class="project-card glow-iot" data-title="Sistema IoT con ESP32"
+                    data-desc="Diseño e implementación de un sistema de monitoreo en tiempo real utilizando microcontroladores ESP32, sensores ambientales y protocolos de comunicación IoT para el análisis de datos."
+                    data-img="assets/img/IoT.png" data-tags="ESP32, C++, IoT, Sensor LDR"
+                    data-github="https://github.com/Amidwar-GH/Alarma-IoT-Sensor-LDR">
                     <div class="project-card-image">
-                        <img src="assets/img/IoT.png" alt="Proyecto IoT">
+                        <img src="assets/img/IoT.png" alt="Sistema IoT ESP32">
                     </div>
                     <div class="project-card-info">
-                        <h3>Sistema IoT ESP32</h3>
-                        <p>Monitoreo ambiental en tiempo real con sensores.</p>
+                        <h3>Sistema IoT con ESP32</h3>
+                        <p>Monitoreo en tiempo real de variables ambientales y control de sensores.</p>
                         <div class="project-tags">
-                            <span>IoT</span>
                             <span>ESP32</span>
+                            <span>C++</span>
+                            <span>IoT</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto 2: Flutter (Aura Púrpura) -->
-                <div class="project-card glow-flutter" data-title="Aplicación Móvil Flutter"
-                    data-desc="Aplicación móvil multiplataforma orientada a la organización de tareas y hábitos."
-                    data-img="assets/img/contacto.png" data-tags="Flutter, Dart, Mobile">
+                <!-- Proyecto 2: Flutter -->
+                <div class="project-card glow-flutter" data-title="Aplicación Móvil en Flutter"
+                    data-desc="Desarrollo de una aplicación móvil multiplataforma orientada a la gestión de tareas y optimización de procesos, integrando arquitectura limpia y gestión de estado avanzada."
+                    data-img="assets/img/contacto.png" data-tags="Flutter, Dart, Mobile, API REST"
+                    data-github="https://github.com/Amidwar-GH/Flutter-Lista-Producto">
                     <div class="project-card-image">
-                        <img src="assets/img/contacto.png" alt="Aplicación Flutter">
+                        <img src="assets/img/contacto.png" alt="App Móvil Flutter">
                     </div>
                     <div class="project-card-info">
-                        <h3>App Móvil Flutter</h3>
-                        <p>Gestión de tareas con interfaz moderna y rápida.</p>
+                        <h3>App Móvil Multiplataforma</h3>
+                        <p>Aplicación nativa para Android y iOS enfocada en la experiencia de usuario.</p>
                         <div class="project-tags">
                             <span>Flutter</span>
                             <span>Dart</span>
+                            <span>Mobile</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto 3: Web (Aura Esmeralda/Verde) -->
-                <div class="project-card glow-web" data-title="Plataforma Web Responsiva"
-                    data-desc="Sitio web interactivo enfocado en rendimiento y experiencia de usuario."
-                    data-img="assets/img/webpage.png" data-tags="HTML5, CSS3, JavaScript">
+                <!-- Proyecto 3: Web -->
+                <div class="project-card glow-web" data-title="Plataforma Web Interactiva"
+                    data-desc="Creación de un sitio web responsivo con interfaz moderna, efectos dinámicos de neón/aura y estructura optimizada para presentación de portafolios y servicios."
+                    data-img="assets/img/webpage.png" data-tags="HTML5, CSS3, JavaScript, Responsive"
+                    data-github="https://github.com/Amidwar-GH/PJ_PERFIL">
                     <div class="project-card-image">
-                        <img src="assets/img/webpage.png" alt="Proyecto Web">
+                        <img src="assets/img/Profile.jpeg" alt="Plataforma Web">
                     </div>
                     <div class="project-card-info">
-                        <h3>Plataforma Web</h3>
-                        <p>Diseño web limpio con efectos visuales avanzados.</p>
+                        <h3>Plataforma Web Dashboard</h3>
+                        <p>Interfaz web responsiva para visualización de métricas e interacción fluida.</p>
                         <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
                             <span>JS</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
+
+        <!-- MODAL EMERGENTE -->
+        <div class="modal-overlay" id="project-modal">
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close" aria-label="Cerrar">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-image-box">
+                        <img src="" alt="Vista previa del proyecto" id="modal-img">
+                    </div>
+                    <div class="modal-details" id="modal-details">
+                        <h3 id="modal-title"></h3>
+                        <div class="project-tags" id="modal-tags"></div>
+                        <p id="modal-desc"></p>
+
+                        <!-- BOTÓN DE GITHUB -->
+                        <div class="modal-actions">
+                            <a href="#" id="modal-github" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                Ver en GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
